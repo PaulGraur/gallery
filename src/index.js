@@ -93,14 +93,13 @@ function renderGallery(name) {
   gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-loadBtn.addEventListener(
-  'click',
-  () => {
-    name = searchQuery.value;
-    page += 1;
-    fetchImages(name, page, perPage).then(name => {
-      let totalPages = name.totalHits / perPage;
-      renderGallery(name);
+loadBtn.addEventListener('click', () => {
+  name = searchQuery.value;
+  page += 1;
+  fetchImages(name, page, perPage)
+    .then(response => {
+      const totalPages = Math.ceil(response.totalHits / perPage);
+      renderGallery(response);
       new SimpleLightbox('.gallery a');
       if (page >= totalPages) {
         loadBtn.style.display = 'none';
@@ -108,7 +107,6 @@ loadBtn.addEventListener(
           "We're sorry, but you've reached the end of search results."
         );
       }
-    });
-  },
-  true
-);
+    })
+    .catch(error => console.log('ERROR: ' + error));
+});
