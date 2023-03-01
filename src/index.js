@@ -9,15 +9,15 @@ const searchForm = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
 const loadBtn = document.querySelector('.load-more');
 
-let perPage = 40;
+const perPage = 40;
 let page = 0;
 let name = searchQuery.value;
 
 async function eventHandler(e) {
   e.preventDefault();
   gallery.innerHTML = '';
-  page = 1;
-  name = searchQuery.value;
+  let page = 1;
+  let name = searchQuery.value;
   fetchImages(name, page, perPage)
     .then(name => {
       let totalPages = name.totalHits / perPage;
