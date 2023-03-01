@@ -64,25 +64,25 @@ function renderGallery(name) {
         <div class="info">
           <div class="info__box">
             <p class="info-item">
-              <b class="material-symbols-outlined">thumb_up</b>
+              <b class="material-symbols-outlined">Likes</b>
             </p>
             <p class="info-counter">${hit.likes}</p>
           </div>
           <div class="info__box">
             <p class="info-item">
-              <b class="material-symbols-outlined">visibility</b>
+              <b class="material-symbols-outlined">Views</b>
             </p>
             <p class="info-counter">${hit.views}</p>
           </div>
           <div class="info__box">
             <p class="info-item">
-              <b class="material-symbols-outlined">forum</b>
+              <b class="material-symbols-outlined">Comments</b>
             </p>
             <p class="info-counter">${hit.comments}</p>
           </div>
           <div class="info__box">
             <p class="info-item">
-              <b class="material-symbols-outlined">download</b>
+              <b class="material-symbols-outlined">Download</b>
             </p>
             <p class="info-counter">${hit.downloads}</p>
           </div>
