@@ -4,7 +4,6 @@ import Notiflix from 'notiflix';
 import {fetchImages} from './fetchAPI';
 
 const searchQuery = document.querySelector('input[name="searchQuery"]');
-const closeBtn = document.querySelector('.close-btn');
 const searchForm = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
 const loadBtn = document.querySelector('.load-more');
@@ -13,7 +12,7 @@ const perPage = 40;
 let page = 0;
 let name = searchQuery.value;
 
-async function eventHandler(e) {
+async function eventHandler(e) { 
   e.preventDefault();
   gallery.innerHTML = '';
   let page = 1;
@@ -25,11 +24,7 @@ async function eventHandler(e) {
         Notiflix.Notify.success(`Hooray! We found ${name.totalHits} images.`);
         renderGallery(name);
         new SimpleLightbox('.gallery a');
-        closeBtn.style.display = 'block';
-        closeBtn.addEventListener('click', () => {
-          gallery.innerHTML = '';
-          closeBtn.style.display = 'none';
-        });
+
         if (page < totalPages) {
           loadBtn.style.display = 'block';
         } else {

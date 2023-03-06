@@ -8,3 +8,4 @@ async function fetchImages(name, page, perPage){
   return response.data;
 }
 export { fetchImages };
+
